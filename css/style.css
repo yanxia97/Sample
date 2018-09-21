@@ -1,0 +1,67 @@
+body {
+    background: lightgrey;
+}
+
+ul {
+    text-align: center;
+}
+
+li {
+	text-decoration: underline;
+	display: inline-block;
+    background-color: lightgoldenrodyellow;
+    padding: 5px;
+    width: 150px;
+    text-align: center;
+    border: solid 1px blueviolet;
+    margin: 5px;
+    color: black;
+    font-family: Times;
+}
+
+li:hover {
+    background-color: red;
+    color: blueviolet;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+div {
+    font-family: Helvetica
+}
+
+p {
+    font-family: Cursive;
+}
+
+i {
+    color: red;
+    font-size: 50px;
+}
+
+i:hover {
+    color: blueviolet;
+}
+
+#selfpic {
+    width: 20%;
+}
+
+.food {
+    width: 33%;
+}
+
+.icon{ 
+    width: 30px;
+}
+
