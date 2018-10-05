@@ -61,3 +61,11 @@ i:hover {
     width: 30px;
 }
 
+#background {
+    width: 100%;
+    background: url(https://www.ocf.berkeley.edu/~sather/wp-content/uploads/2018/01/food--1200x600.jpg);
+    background-color: lightgray;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
