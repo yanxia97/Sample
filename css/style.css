@@ -35,7 +35,7 @@ h2 {
 }
 
 p {
-    font-family: Cursive;
+    font-family: 'Slabo 27px', serif;
 }
 
 i {
@@ -84,10 +84,6 @@ i:hover {
 
 .image2 {
     grid-row: 2/4;
-}
-
-.passage {
-    font-family: 'Slabo 27px', serif;
 }
 
 .reference {
