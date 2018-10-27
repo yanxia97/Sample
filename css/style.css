@@ -96,3 +96,13 @@ i:hover {
     /* grid-template-rows: 1fr 1fr 1fr; */
 }
 
+@media screen and (max-width:900px){
+    li {
+        display: block;
+        margin:5px auto;
+    }
+
+    .grid_for_page2{
+        display: inline;
+    }
+}
