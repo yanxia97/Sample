@@ -105,12 +105,6 @@ i:hover {
 }
 
 @media screen and (max-resolution:96dpi){
-    li {
-        display: inline-block;
-        width:20%;
-        margin: 5px;
-    }
-
     .grid_for_page2{
         display: inline;
     }
