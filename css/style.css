@@ -107,7 +107,7 @@ i:hover {
 @media screen and (max-resolution:96dpi){
     li {
         display: inline-block;
-        width:50%;
+        width:20%;
         margin: 5px;
     }
 
