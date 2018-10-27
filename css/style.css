@@ -103,9 +103,22 @@ i:hover {
     }
 }
 
-@media screen and (max-resolution:96dpi){
-    .li {
+@media screen and (min-resolution:200dpi){
+    li {
+        display: block;
+        margin:5px auto;
+    }
+    .grid_for_page2{
+        display: inline;
+    }
+}
+
+@media screen and (orientation:portrait){    
+    li {
+        text-decoration: none;
+        text-align: left;
         display: block;
         margin:5px auto;
     }
 }
+
