@@ -114,11 +114,13 @@ footer{
 
 .gallery{
     width: 90%;
+    height: 400px;
     margin: 100px auto;
 }
 .scroll{
     width: 90%;
     display: grid;
+    height: 400px;
     grid-template-columns: 1fr 15fr 1fr;
 }
 .scroll_left{
