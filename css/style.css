@@ -6,7 +6,7 @@ ul {
     text-align: center;
 }
 
-li {
+.navigation{
 	text-decoration: underline;
 	display: inline-block;
     background-color: lightgoldenrodyellow;
@@ -19,7 +19,7 @@ li {
     font-family: Times;
 }
 
-li:hover {
+.navigation:hover {
     background-color: red;
     color: blueviolet;
 }
@@ -106,6 +106,50 @@ i:hover {
     background:#8B4513;
     width:30%;
     margin:auto;
+}
+
+footer{
+    margin:auto;
+}
+
+.gallery{
+    width: 90%;
+    margin: 100px auto;
+}
+.scroll{
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 15fr 1fr;
+}
+.scroll_left{
+    background:url(../assets/images/btn_left.jpg);
+    background-repeat: no-repeat;
+    float:left;
+    background-size: 100% 100%;
+}
+.scroll_right{
+    background:url(../assets/images/btn_right.jpg);
+    background-repeat: no-repeat;
+    float:left;
+    background-size: 100% 100%;
+}
+.pic{
+    width:400px;
+    height:400px;
+    float:left;
+}
+.pic ul{
+    display:block;
+}
+.pic li{
+    float: left;
+    display: inline;
+    width: 400px;
+    text-align:center;
+}
+.pic img{
+    width: 400px;
+    height: 400px;
 }
 
 @media screen and (max-width:900px){

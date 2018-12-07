@@ -8,24 +8,46 @@
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Roboto%7cSlabo+27px" rel="stylesheet">
+        <link href="dist/css/lightbox.min.css" rel="stylesheet">
 
         <title>Isaac's website</title>
     </head>
     <body>
         <header>
             <div class="background">
-                <ul>
-                    <li> <a href = "index.html"> Introduction </a> </li>
-                    <li> <a href = "overview.html"> Overview </a> </li>
-                    <li> <a href = "content.html"> Content </a> </li>
-                    <li> <a href = "contact.html"> Contact </a> </li>
-                </ul>
+                <nav>
+                    <ul>
+                        <li class="navigation"> <a href = "index.html"> Introduction </a> </li>
+                        <li class="navigation"> <a href = "overview.html"> Overview </a> </li>
+                        <li class="navigation"> <a href = "content.html"> Content </a> </li>
+                        <li class="navigation"> <a href = "contact.html"> Contact </a> </li>
+                    </ul>
+                </nav>
                 <h1><div class="h1background">Content</div></h1>
                 <h2><div class="h2background">Isaac</div></h2>
             </div>
         </header>  
         <main>
-            <div class="grid_for_page3">
+            <div class="gallery" id="gallery">
+                <div class="scroll" id="scroll">
+                    <div class="scroll_left" id="LeftArr"></div>
+                    <div class="pic" id="scrollPic">
+                    <ul>
+                        <li><a href="#" target="_blank" title=""><img src="assets/images/food3.jpg" alt="" /></a></li>
+                        <li><a href="#" target="_blank" title=""><img src="assets/images/food4.jpg" alt="" /></a></li>
+                        <li><a href="#" target="_blank" title=""><img src="assets/images/food5.jpg" alt="" /></a></li>
+                        <li><a href="#" target="_blank" title=""><img src="assets/images/food6.jpg" alt="" /></a></li>
+                        <li><a href="#" target="_blank" title=""><img src="assets/images/food7.jpg" alt="" /></a></li>
+                        <li><a href="#" target="_blank" title=""><img src="assets/images/food8.jpg" alt="" /></a></li>
+                        <li><a href="#" target="_blank" title=""><img src="assets/images/food9.jpg" alt="" /></a></li>
+                        <li><a href="#" target="_blank" title=""><img src="assets/images/food10.jpg" alt="" /></a></li>
+                        <li><a href="#" target="_blank" title=""><img src="assets/images/food11.jpg" alt="" /></a></li>
+                    </ul>
+                    </div>
+                    <div class="scroll_right" id="RightArr"></div>
+                </div>
+            </div>
+            <!-- <div class="grid_for_page3">
                 <div class="image3"> <img src="assets/images/food1.jpg" alt = "" class = "food"/> </div>
                 <div class="image3"> <img src="assets/images/food3.jpg" alt = "" class = "food"/> </div>
                 <div class="image3"> <img src="assets/images/food4.jpg" alt = "" class = "food"/> </div>
@@ -35,10 +57,35 @@
                 <div class="image3"> <img src="assets/images/food8.jpg" alt = "" class = "food"/> </div>
                 <div class="image3"> <img src="assets/images/food9.jpg" alt = "" class = "food"/> </div>
                 <div class="image3"> <img src="assets/images/food10.jpg" alt = "" class = "food"/> </div>
-            </div>
-            <<footer>
+            </div> -->
+            <footer>
                 <a href="https://github.com/yanxia97"><i class="fab fa-github"></i> Github</a>
             </footer>
         </main>
+
+        <script src="dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="js/scrollPic.js"></script>
+        <script>
+            window.onload = function(){
+                scrollPic();
+            }
+            function scrollPic() {
+                var scrollPic = new ScrollPic();
+                scrollPic.scrollContId   = "scrollPic"; //内容容器ID
+                scrollPic.arrLeftId      = "LeftArr";//左箭头ID
+                scrollPic.arrRightId     = "RightArr"; //右箭头ID
+            
+                var width = document.getElementById("scroll").offsetWidth
+                scrollPic.frameWidth     = width/17*15;//显示框宽度
+                scrollPic.pageWidth      = 200; //翻页宽度
+            
+                scrollPic.speed          = 10; //移动速度(单位毫秒，越小越快)
+                scrollPic.space          = 10; //每次移动像素(单位px，越大越快)
+                scrollPic.autoPlay       = true; //自动播放
+                scrollPic.autoPlayTime   = 1; //自动播放间隔时间(秒)
+            
+                scrollPic.initialize(); //初始化
+            }
+        </script>
     </body>
 </html>
