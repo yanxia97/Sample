@@ -112,48 +112,6 @@ footer{
     margin:auto;
 }
 
-.gallery{
-    width: 90%;
-    height: 400px;
-    margin: 100px auto;
-}
-.scroll{
-    width: 90%;
-    display: grid;
-    height: 400px;
-    grid-template-columns: 1fr 15fr 1fr;
-}
-.scroll_left{
-    background:url(../assets/images/btn_left.jpg);
-    background-repeat: no-repeat;
-    float:left;
-    background-size: 100% 100%;
-}
-.scroll_right{
-    background:url(../assets/images/btn_right.jpg);
-    background-repeat: no-repeat;
-    float:left;
-    background-size: 100% 100%;
-}
-.pic{
-    width:400px;
-    height:400px;
-    float:left;
-}
-.pic ul{
-    display:block;
-}
-.pic li{
-    float: left;
-    display: inline;
-    width: 400px;
-    text-align:center;
-}
-.pic img{
-    width: 400px;
-    height: 400px;
-}
-
 @media screen and (max-width:900px){
     .grid_for_page2{
         display: inline;
