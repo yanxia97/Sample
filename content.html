@@ -9,8 +9,9 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Roboto%7cSlabo+27px" rel="stylesheet">
         <link href="dist/css/lightbox.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <style>
-            .gallery{
+            .s_gallery{
                 width: 90%;
                 height: 400px;
                 margin: 100px auto;
@@ -43,10 +44,13 @@
     </head>
     <body>
         <header>
+            <div class="acc">
+                <a class="jump" href="#gallery">jump to main content</a>
+            </div>
             <div class="background">
                 <nav>
                     <ul>
-                        <li class="navigation"> <a href = "index.html"> Introduction </a> </li>
+                        <li class="navigation"> <a href = "introduction.html"> Introduction </a> </li>
                         <li class="navigation"> <a href = "overview.html"> Overview </a> </li>
                         <li class="navigation current"> <a href = "content.html"> Content </a> </li>
                         <li class="navigation"> <a href = "contact.html"> Contact </a> </li>
@@ -57,36 +61,63 @@
             </div>
         </header>  
         <main>
-            <div class="gallery" id="gallery">
+            <div class="s_gallery" id="s_gallery">
                 <div class="scroll" id="scroll">
                     <div class="scroll_left" id="LeftArr"></div>
                     <div class="pic" id="scrollPic">
                     <ul>
-                        <li><a href="#" target="_blank" title=""><img src="assets/images/food3.jpg" alt="" /></a></li>
-                        <li><a href="#" target="_blank" title=""><img src="assets/images/food4.jpg" alt="" /></a></li>
-                        <li><a href="#" target="_blank" title=""><img src="assets/images/food5.jpg" alt="" /></a></li>
-                        <li><a href="#" target="_blank" title=""><img src="assets/images/food6.jpg" alt="" /></a></li>
-                        <li><a href="#" target="_blank" title=""><img src="assets/images/food7.jpg" alt="" /></a></li>
-                        <li><a href="#" target="_blank" title=""><img src="assets/images/food8.jpg" alt="" /></a></li>
-                        <li><a href="#" target="_blank" title=""><img src="assets/images/food9.jpg" alt="" /></a></li>
-                        <li><a href="#" target="_blank" title=""><img src="assets/images/food10.jpg" alt="" /></a></li>
-                        <li><a href="#" target="_blank" title=""><img src="assets/images/food11.jpg" alt="" /></a></li>
+                        <li><a href="assets/images/food3.jpg" target="_blank" title=""><img src="assets/images/food3.jpg" alt="Food pic 1" /></a></li>
+                        <li><a href="assets/images/food4.jpg" target="_blank" title=""><img src="assets/images/food4.jpg" alt="Food pic 2" /></a></li>
+                        <li><a href="assets/images/food5.jpg" target="_blank" title=""><img src="assets/images/food5.jpg" alt="Food pic 3" /></a></li>
+                        <li><a href="assets/images/food6.jpg" target="_blank" title=""><img src="assets/images/food6.jpg" alt="Food pic 4" /></a></li>
+                        <li><a href="assets/images/food7.jpg" target="_blank" title=""><img src="assets/images/food7.jpg" alt="Food pic 5" /></a></li>
+                        <li><a href="assets/images/food8.jpg" target="_blank" title=""><img src="assets/images/food8.jpg" alt="Food pic 6" /></a></li>
+                        <li><a href="assets/images/food9.jpg" target="_blank" title=""><img src="assets/images/food9.jpg" alt="Food pic 7" /></a></li>
+                        <li><a href="assets/images/food10.jpg" target="_blank" title=""><img src="assets/images/food10.jpg" alt="Food pic 8" /></a></li>
+                        <li><a href="assets/images/food11.jpg" target="_blank" title=""><img src="assets/images/food11.jpg" alt="Food pic 9" /></a></li>
                     </ul>
                     </div>
                     <div class="scroll_right" id="RightArr"></div>
                 </div>
             </div>
-            <!-- <div class="grid_for_page3">
-                <div class="image3"> <img src="assets/images/food1.jpg" alt = "" class = "food"/> </div>
-                <div class="image3"> <img src="assets/images/food3.jpg" alt = "" class = "food"/> </div>
-                <div class="image3"> <img src="assets/images/food4.jpg" alt = "" class = "food"/> </div>
-                <div class="image3"> <img src="assets/images/food5.jpg" alt = "" class = "food"/> </div>
-                <div class="image3"> <img src="assets/images/food6.jpg" alt = "" class = "food"/> </div>
-                <div class="image3"> <img src="assets/images/food7.jpg" alt = "" class = "food"/> </div>
-                <div class="image3"> <img src="assets/images/food8.jpg" alt = "" class = "food"/> </div>
-                <div class="image3"> <img src="assets/images/food9.jpg" alt = "" class = "food"/> </div>
-                <div class="image3"> <img src="assets/images/food10.jpg" alt = "" class = "food"/> </div>
-            </div> -->
+            <div class="gallery" id="gallery">
+                <div class="mix class-1 item">
+                    <a href="assets/images/food3.jpg" data-lightbox="example-1" data-title="Food picture in class 1."><img src="assets/images/food3.jpg"
+                            alt="food picture 1"></a>
+                </div>
+                <div class="mix class-1 item">
+                    <a href="assets/images/food4.jpg" data-lightbox="example-1" data-title="Food picture in class 1."><img src="assets/images/food4.jpg"
+                            alt="food picture 2"></a>
+                </div>
+                <div class="mix class-2 item">
+                    <a href="assets/images/food5.jpg" data-lightbox="example-2" data-title="Food picture in class 2."><img src="assets/images/food5.jpg"
+                            alt="food picture 3"></a>
+                </div>
+                <div class="mix class-2 item">
+                    <a href="assets/images/food6.jpg" data-lightbox="example-2" data-title="Food picture in class 2."><img src="assets/images/food6.jpg"
+                            alt="food picture 4"></a>
+                </div>
+                <div class="mix class-3 item">
+                    <a href="assets/images/food7.jpg" data-lightbox="example-3" data-title="Food picture in class 3."><img src="assets/images/food7.jpg"
+                            alt="food picture 5"></a>
+                </div>
+                <div class="mix class-3 item">
+                    <a href="assets/images/food8.jpg" data-lightbox="example-3" data-title="Food picture in class 3."><img src="assets/images/food8.jpg"
+                            alt="food picture 6"></a>
+                </div>
+                <div class="mix class-4 item">
+                    <a href="assets/images/food9.jpg" data-lightbox="seperate-1" data-title="A single picture 1."><img src="assets/images/food9.jpg"
+                            alt="food picture 7"></a>
+                </div>
+                <div class="mix class-5 item">
+                    <a href="assets/images/food10.jpg" data-lightbox="seperate-2" data-title="A single picture 2."><img src="assets/images/food10.jpg"
+                            alt="food picture 8"></a>
+                </div>
+                <div class="mix class-1 item">
+                    <a href="assets/images/food11.jpg" data-lightbox="example-1" data-title="Food picture in class 1."><img src="assets/images/food11.jpg"
+                            alt="food picture 9"></a>
+                </div>
+            </div>
             <footer>
                 <a href="https://github.com/yanxia97"><i class="fab fa-github"></i> Github</a>
             </footer>
