@@ -24,13 +24,13 @@
                 var a = document.getElementById("name").value
                 var b = document.getElementById("message").value
                 if (a.length == 0) {
-                    document.getElementById("nameerrormsg").style.display = "block"; a = 0;
+                    document.getElementById("nameerrormsg").style.display = "block";
                 }
                 else {
                     document.getElementById("nameerrormsg").style.display = "none";
                 }
 
-                if (b.length == 0) { document.getElementById("msgrerrormsg").style.display = "block"; b = 0 }
+                if (b.length == 0) { document.getElementById("msgrerrormsg").style.display = "block";}
                 else { document.getElementById("msgrerrormsg").style.display = "none"; }
 
                 if (b.length == 0 ||a.length == 0) {
@@ -116,6 +116,15 @@
                 Find more self-made food through <a href="http://www.xiachufang.com">the link</a>.
             </p>
 
+            <form>
+                <fieldset>
+                    <legend>
+                        <img src="assets/images/letter_icon.jpeg" alt="Gmail" class="icon" />
+                    </legend>
+                    <input type=button value="E-Mail Me!" onclick="mailme()">
+                </fieldset>
+            </form>
+
             <form action="#" method="POST" class="elegant-aero">
                 <h1>Contact Form
                     <span>Please fill all the texts in the fields.</span>
@@ -133,22 +142,16 @@
                 <label>
                     <span>&nbsp;</span>
                     <input type="button" class="button" value="Send" onclick="saveStorage()"/>
-                    <input type="button" class="button" value="Delete" onclick="clearStorage('msg')" />
+                    <!-- <input type="button" class="button" value="Delete" onclick="clearStorage('msg')" /> -->
                 </label>
-            </form>
-            
-            <form> 
-                <fieldset>
-                    <legend>
-                        <img src="assets/images/letter_icon.jpeg" alt = "Gmail" class="icon"/>
-                    </legend>
-                    <input type=button value="E-Mail Me!" onclick="mailme()"> 
-                </fieldset>
             </form>
 
             <hr />
             <p id="msg"></p>
+            <input type="button" class="button" id="Show" value="Show" onclick="loadStorage('msg')" />
 
+            <br />
+            <br />
             <footer>
                 <a href="https://github.com/yanxia97"><i class="fab fa-github"></i> Github</a>
             </footer>
