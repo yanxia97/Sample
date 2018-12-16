@@ -11,6 +11,86 @@
         <link href="dist/css/lightbox.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+        <style>
+            .errormsg {
+                color: red;
+                /*font: Use a Google font*/
+                display: none;
+            }
+        </style>
+
+        <script type="text/javascript">
+            function saveStorage() {
+                var a = document.getElementById("name").value
+                var b = document.getElementById("message").value
+                if (a.length == 0) {
+                    document.getElementById("nameerrormsg").style.display = "block"; a = 0;
+                }
+                else {
+                    document.getElementById("nameerrormsg").style.display = "none";
+                }
+
+                if (b.length == 0) { document.getElementById("msgrerrormsg").style.display = "block"; b = 0 }
+                else { document.getElementById("msgrerrormsg").style.display = "none"; }
+
+                if (b.length == 0 ||a.length == 0) {
+                    // alert("NO!!")
+                    return false;
+                }
+                else {
+                    //获取textarea的value值
+                    var data = a + ": " + b;
+                    //获取当前时间戳
+                    var time = new Date().getTime();
+                    //将时间戳作为键值，textarea的value值作为键值的内容保存在本地数据库
+                    // Check browser support
+                    if (typeof (Storage) !== "undefined") {
+                        // Store
+                        localStorage.setItem(time, data);
+                        // Retrieve
+                        // document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+                    } else {
+                        // document.getElementById("result").innerHTML = "抱歉！您的浏览器不支持 Web Storage ...";
+                    }
+                    //保存成功后提示成功
+                    console.log("数据已保存");
+                    //设置loadStorage函数的传参（ID值）
+                    loadStorage('msg');
+                }
+            }
+
+            function loadStorage(id) {
+                var result = '<table border="1">';
+                //遍历本地数据所有内容
+                for (var i = 0; i < localStorage.length; i++) {
+                    //获取每一条新增的键值
+                    var kes = localStorage.key(i);
+                    //获取新增键值的内容
+                    var value = localStorage.getItem(kes);
+                    //获取时间对象
+                    var date = new Date();
+                    //将时间戳转化为正常时间 Mon Jun 19 1972 11:12:44 GMT+0800 (中国标准时间) 的格式
+                    date.setTime(kes);
+                    //将转化后的内容变成字符串
+                    var datestr = date.toString();
+                    //将所有新增内容添加到result变量中
+                    result += '<tr><td>' + value + '</td><td>' + datestr + '</td></tr>'
+                }
+                result += '</table>';
+                var target = document.getElementById(id);
+                //将所有内容添加到元素中显示
+                target.innerHTML = result;
+
+            }
+
+            function clearStorage() {
+                //清除本地储存所有内容
+                localStorage.clear();
+                console.log("清除完毕");
+            }
+
+        </script>
+
         <title>Isaac's website</title>
     </head>
     <body>
@@ -35,27 +115,49 @@
             <p>
                 Find more self-made food through <a href="http://www.xiachufang.com">the link</a>.
             </p>
+
+            <form action="#" method="POST" class="elegant-aero">
+                <h1>Contact Form
+                    <span>Please fill all the texts in the fields.</span>
+                </h1>
+                <label>
+                    <span>Your Name :</span>
+                    <input id="name" type="text" name="name" placeholder="Your Full Name" />
+                    <p class="errormsg" id="nameerrormsg">Please enter your name above!</p>
+                </label>
+                <label>
+                    <span>Message :</span>
+                    <textarea id="message" name="message" placeholder="Your Message to Us"></textarea>
+                    <p class="errormsg" id="msgrerrormsg">Please enter your message above!</p>
+                </label>
+                <label>
+                    <span>&nbsp;</span>
+                    <input type="button" class="button" value="Send" onclick="saveStorage()"/>
+                    <input type="button" class="button" value="Delete" onclick="clearStorage('msg')" />
+                </label>
+            </form>
             
             <form> 
                 <fieldset>
                     <legend>
                         <img src="assets/images/letter_icon.jpeg" alt = "Gmail" class="icon"/>
                     </legend>
-                    <input type=button value="E-Mail Me!" onClick="mailme()"> 
+                    <input type=button value="E-Mail Me!" onclick="mailme()"> 
                 </fieldset>
             </form>
+
+            <hr />
+            <p id="msg"></p>
 
             <footer>
                 <a href="https://github.com/yanxia97"><i class="fab fa-github"></i> Github</a>
             </footer>
         </main>
 
-        <script language=javascript>
+        <script language="javascript">
             function mailme(){
-                location="mailto:isaacyan@umich.edu?subject=test&subject=&body=";
+                location="mailto:isaacyan@umich.edu?subject=test&body=";
             }
         </script>
-
-        <script src="dist/js/lightbox-plus-jquery.min.js"></script>
     </body>
 </html>
